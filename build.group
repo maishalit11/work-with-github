@@ -1,4 +1,4 @@
-properties([parameters([string(defaultValue: 'aviel', description: '', name: 'name', trim: false)]), pipelineTriggers([pollSCM('* * * * *')])])
+properties([parameters([string(defaultValue: 'mai', description: '', name: 'name', trim: false)]), pipelineTriggers([pollSCM('* * * * *')])])
 
 node {
     stage("checkout repo"){
