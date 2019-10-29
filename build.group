@@ -1,9 +1,10 @@
-checkout([$class: 'GitSCM', branches: [[name: '*/develop'], [name: '*/develop'], [name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/maishalit11/work-with-github.git']]])
+properties([parameters([string(defaultValue: 'aviel', description: '', name: 'name', trim: false)]), pipelineTriggers([pollSCM('* * * * *')])])
+
 node {
     stage("checkout repo"){
-        git branch: '*/develop' , url: 'https://github.com/maishalit11/work-with-github.git'
+        checkout([$class: 'GitSCM', branches: [[name: '*/develop']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/maishalit11/work-with-github.git']]])
     }
     stage("hello world"){
-        
+        echo "Hello world!"
     }
 }
