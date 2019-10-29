@@ -1,0 +1,9 @@
+checkout([$class: 'GitSCM', branches: [[name: '*/develop'], [name: '*/develop'], [name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/maishalit11/work-with-github.git']]])
+node {
+    stage("checkout repo"){
+        git branch: '*/develop' , url: 'https://github.com/maishalit11/work-with-github.git'
+    }
+    stage("hello world"){
+        
+    }
+}
